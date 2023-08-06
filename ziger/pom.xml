@@ -14,6 +14,10 @@
     <url>https://jitpack.io</url>
   </repository>
 </repositories>
+<properties>
+    <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        </properties>
 
   <dependencies>
   <dependency>
@@ -21,6 +25,8 @@
     <artifactId>mindustry</artifactId>
     <version>v145.1</version>
   </dependency>
+  
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
