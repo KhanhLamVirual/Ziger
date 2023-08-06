@@ -8,6 +8,7 @@ import arc.util.Timer;
 import arc.util.io.ReusableByteOutStream;
 import arc.util.io.Writes;
 import mindustry.Vars;
+import mindustry.core.GameState.State;
 import mindustry.game.EventType.PlayerJoin;
 import mindustry.gen.Building;
 import mindustry.gen.Call;
@@ -31,6 +32,9 @@ public class App extends Plugin
         this.syncStream = new ReusableByteOutStream();
         
         Timer.schedule(() -> {
+            if (Vars.state.getState() != State.playing) {
+                return;
+            }
             Groups.build.each((build) -> add(build));
         }, 0.0f, 0.2f);
         
